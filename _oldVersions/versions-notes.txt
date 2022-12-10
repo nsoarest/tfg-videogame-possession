@@ -7,10 +7,11 @@ Versions:
 0.5 - Implemented Help Menu & Power-up screen. Finished first level, with pick-ups, enemies, traps and patroling flying enemies. Corruption only works near skulls corruption traps atm.
 0.6 - Implemented full second level & previous problem fixes. Added Possed Enemies. Chosing abilities the second time is BUGGED.
 0.7 - Implemented Boss Phase 1 & Previous fixes: Removed Possessed Enemies glow and changed it for the red smoke of the Skull Traps. Corruption enemies/traps always drop pick-ups. Increase health (was too easy to die). Abilities BUG Fixed. Implemented Chose level (so you can start the game from LV 1, 2 or Boss and continue the loop from there as usual).
-0.8 - Full Alpha Version: (Should have been delivered with PEC2 but wasn't done on time) - Finished BOSS (Phase 1 and Phase 2).
+0.8 - Full Alpha Version: (Should have been delivered with PEC2 but wasn't done on time).
 
 ToDo:
 1. Reduce Boss phase 1 timer
 2. Fix Gameplay loop when escaping the boss (instead of restarting the game)
 3. Add story text screen previous to the boss fight.
 4. Implement Score screen (if you WIN).
+5. Finish Boss Phase 2 implementation.
