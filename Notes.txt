@@ -1,0 +1,12 @@
+-------Game
+-Made a main menu
+-Made a Test Level
+-Made HUD(hp bar, corruption bar, death screen)
+
+--------Player
+-Implemented horizontal movement with acceleration
+-Implemented gravity and jump
+-Implemented a crouch mode
+-Player's death and possession mechanics
+-Coyote Jump
+-Hitbox where the player can take hits from enemies
