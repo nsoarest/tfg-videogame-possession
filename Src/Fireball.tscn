@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/PlayerFireball.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Fireball.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Particle.png" type="Texture" id=3]
+[ext_resource path="res://Assets/light.png" type="Texture" id=4]
+[ext_resource path="res://Assets/fire-1.ogg" type="AudioStream" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2.49599, 2.53048 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+lifetime_randomness = 0.09
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_disable_z = true
+direction = Vector3( -1, 1, 0 )
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 45.05
+angular_velocity = 64.86
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = -10.81
+scale = 0.5
+scale_random = 0.57
+color = Color( 0.905882, 0.631373, 0.223529, 1 )
+hue_variation = -0.05
+
+[node name="Fireball" type="Area2D"]
+collision_layer = 0
+collision_mask = 13
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+scale = Vector2( 0.8, 0.8 )
+amount = 7
+lifetime = 0.2
+explosiveness = 0.03
+randomness = 0.1
+process_material = SubResource( 2 )
+texture = ExtResource( 3 )
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 4 )
+texture_scale = 0.01
+color = Color( 0.929412, 0.686275, 0.168627, 1 )
+energy = 0.4
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+volume_db = -6.0
+autoplay = true
+attenuation = 1.46409
+
+[connection signal="area_entered" from="." to="." method="_on_Fireball_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Fireball_body_entered"]

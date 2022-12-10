@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Particle.png" type="Texture" id=1]
+
+[sub_resource type="ParticlesMaterial" id=32]
+lifetime_randomness = 0.01
+emission_shape = 2
+emission_box_extents = Vector3( 1, 1, 1 )
+flag_disable_z = true
+spread = 74.62
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 40.0
+initial_velocity_random = 0.16
+angular_velocity = 30.0
+orbit_velocity = -1.0
+orbit_velocity_random = 0.06
+color = Color( 0.215686, 0.215686, 0.215686, 0.607843 )
+
+[node name="Smoke" type="Particles2D"]
+emitting = false
+amount = 26
+explosiveness = 0.17
+randomness = 0.07
+process_material = SubResource( 32 )
+texture = ExtResource( 1 )
