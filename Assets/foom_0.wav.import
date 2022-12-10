@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/foom_0.wav-177f64242c084fa837492a4d722fc497.sample"
+
+[deps]
+
+source_file="res://Assets/foom_0.wav"
+dest_files=[ "res://.import/foom_0.wav-177f64242c084fa837492a4d722fc497.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

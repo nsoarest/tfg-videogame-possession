@@ -1,0 +1,191 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Assets/font1.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Src/Button Theme.tres" type="Theme" id=2]
+[ext_resource path="res://Scripts/UpgradesLvl1.gd" type="Script" id=3]
+[ext_resource path="res://Assets/TreasureChest.png" type="Texture" id=4]
+[ext_resource path="res://Assets/HolyWater.png" type="Texture" id=5]
+[ext_resource path="res://Assets/PlayerFireball.png" type="Texture" id=6]
+[ext_resource path="res://Assets/win sound 2-1.wav" type="AudioStream" id=7]
+
+[sub_resource type="DynamicFontData" id=1]
+antialiased = false
+font_path = "res://Assets/font1.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 10
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 7
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 8
+font_data = ExtResource( 1 )
+
+[node name="UpgradesLvl1" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 321.0
+margin_bottom = 180.0
+color = Color( 0.0117647, 0.0235294, 0.0705882, 1 )
+
+[node name="Heading" type="RichTextLabel" parent="."]
+margin_left = 55.0
+margin_top = 3.0
+margin_right = 264.0
+margin_bottom = 36.0
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0.0196078, 0.301961, 0.501961, 1 )
+bbcode_enabled = true
+bbcode_text = "[center]Choose an Upgrade[/center]"
+text = "Choose an Upgrade"
+scroll_active = false
+
+[node name="InfoLabel" type="RichTextLabel" parent="."]
+margin_left = 160.0
+margin_top = 37.0
+margin_right = 315.0
+margin_bottom = 125.0
+custom_fonts/normal_font = SubResource( 3 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HolyWater" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 45.0
+margin_right = 113.0
+margin_bottom = 65.0
+theme = ExtResource( 2 )
+text = "Holy Water"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TreasureChest" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 71.0
+margin_right = 113.0
+margin_bottom = 91.0
+rect_min_size = Vector2( 105, 20 )
+theme = ExtResource( 2 )
+text = "Treasure Chest"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fireball" type="Button" parent="."]
+margin_left = 8.0
+margin_top = 98.0
+margin_right = 113.0
+margin_bottom = 118.0
+theme = ExtResource( 2 )
+text = "Fireballs"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SelectButton" type="Button" parent="."]
+margin_left = 114.0
+margin_top = 138.0
+margin_right = 200.0
+margin_bottom = 158.0
+theme = ExtResource( 2 )
+disabled = true
+text = "Select"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HolyWaterIcon" type="TextureRect" parent="."]
+margin_left = 118.0
+margin_top = 37.0
+margin_right = 149.0
+margin_bottom = 64.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChestIcon" type="TextureRect" parent="."]
+margin_left = 119.0
+margin_top = 67.0
+margin_right = 150.0
+margin_bottom = 94.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FireballIcon" type="TextureRect" parent="."]
+margin_left = 121.0
+margin_top = 97.0
+margin_right = 145.0
+margin_bottom = 118.0
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Popup" type="Popup" parent="."]
+margin_left = 66.0
+margin_top = 45.0
+margin_right = 246.0
+margin_bottom = 122.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Popup"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0509804, 0.0705882, 0.145098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Popup"]
+margin_left = 17.0
+margin_top = 20.0
+margin_right = 161.0
+margin_bottom = 72.0
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Popup"]
+margin_left = 45.0
+margin_top = 5.0
+margin_right = 133.0
+margin_bottom = 20.0
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 0.0196078, 0.301961, 0.501961, 1 )
+bbcode_enabled = true
+
+[node name="Door" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+volume_db = 3.0
+autoplay = true
+
+[connection signal="pressed" from="HolyWater" to="." method="_on_HolyWater_pressed"]
+[connection signal="pressed" from="TreasureChest" to="." method="_on_TreasureChest_pressed"]
+[connection signal="pressed" from="Fireball" to="." method="_on_Fireball_pressed"]
+[connection signal="pressed" from="SelectButton" to="." method="_on_SelectButton_pressed"]
+[connection signal="popup_hide" from="Popup" to="." method="_on_Popup_popup_hide"]
