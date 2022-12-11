@@ -14,7 +14,7 @@ func _process(delta):
 		$HUD/BossHealth.value=$Azazel.HP
 		$HUD/WinTime.value=$WinTimer.time_left	
 	else:
-		get_tree().change_scene("res://Src/MiniGame.tscn")
+		get_tree().change_scene("res://Src/EndStory.tscn")
 
 
 func _on_Adam_player_dead():
@@ -22,7 +22,8 @@ func _on_Adam_player_dead():
 
 
 func _on_WinTimer_timeout():
-	loose()
+	Globals.boss_hp=$Azazel.HP
+	get_tree().change_scene("res://Src/MiniGame.tscn")
 
 	
 func loose():

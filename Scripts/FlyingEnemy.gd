@@ -6,6 +6,7 @@ export var damage=25
 export var attack_cooldown=5
 export var proj_speed=3
 export var vertical=false
+var is_dead=false
 var random=RandomNumberGenerator.new()
 var seal_scene=preload("res://Src/Seal.tscn")
 var hp_scene=preload("res://Src/HealthPickup.tscn")
@@ -32,8 +33,15 @@ func _process(delta):
 		else:
 			$AnimatedSprite.flip_h=true if global_position.x-player.global_position.x>0 else false
 	if health<=0 and $KnockbackTimer.is_stopped():
-		leave_pickups()
-		queue_free()
+		if !is_dead:
+			is_dead=true
+			leave_pickups()
+			$CollisionShape2D.set_deferred("disabled",true)
+			velocity=0
+			$DieSound.play()
+			$AttackCooldown.stop()
+		
+		
 	
 
 func hit(body,dmg,knock):
@@ -42,6 +50,8 @@ func hit(body,dmg,knock):
 		health-=dmg
 		$HurtSound.play()
 		$AnimatedSprite.material.set_shader_param("flash_modifier",1)
+		if health<=0:
+			Globals.enemies_killed+=1
 
 	
 func _on_KnockbackTimer_timeout():
@@ -66,6 +76,7 @@ func _on_AttackCooldown_timeout():
 		proj_instance.global_position=global_position
 		proj_instance.speed=proj_speed
 		get_parent().get_parent().get_parent().add_child(proj_instance)
+		$Shoot.play()
 	
 	
 func leave_pickups():
@@ -80,3 +91,7 @@ func leave_pickups():
 			
 			
 			
+func _on_DieSound_finished():
+	queue_free()
+
+

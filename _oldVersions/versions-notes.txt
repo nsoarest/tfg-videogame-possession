@@ -7,10 +7,17 @@ Versions:
 0.5 - Implemented Help Menu & Power-up screen. Finished first level, with pick-ups, enemies, traps and patroling flying enemies. Corruption only works near skulls corruption traps atm.
 0.6 - Implemented full second level & previous problem fixes. Added Possed Enemies. Chosing abilities the second time is BUGGED.
 0.7 - Implemented Boss Phase 1 & Previous fixes: Removed Possessed Enemies glow and changed it for the red smoke of the Skull Traps. Corruption enemies/traps always drop pick-ups. Increase health (was too easy to die). Abilities BUG Fixed. Implemented Chose level (so you can start the game from LV 1, 2 or Boss and continue the loop from there as usual).
-0.8 - Full Alpha Version: (Should have been delivered with PEC2 but wasn't done on time).
+0.8 - Full Alpha Version: (Should have been delivered with PEC2 but wasn't done on time). Level 1, 2 and Boss Phase 1 complete & Various Minor Changes. 
 	ToDo:
 	p1. Finish Boss Phase 2 implementation.
 	p2. Fix Gameplay loop when escaping the boss (instead of restarting the game).
 	p3. Add story text screen previous to the boss fight.
 	p4. Implement Score screen (if you WIN).
-
+1.0 - Full Playable Version: (Scheduled for PEC3) - Reduced Boss Timer, fixed gameplay loop. Added story text screen & Score Screen. Finished Boss Phase 2. Various Minor Changes.
+	ToDo:
+	p1. Add smoke on the ground for Boss Phase 2 (symbolyzing Adam being "Trapped" by Azazel's corruption)
+	p2. Reduce Boss Phase 1 Timer.
+	p3. Increase difficulty of the game once you re-start the loop again (level 1 after escaping boss).
+	p4. Add mele attack sound to BOSS.
+	p5. Add number of times you fought the boss to End Screen STATS.
+	p6. Fix restart game when dying. It currently keeps power-ups from previous boss fight.

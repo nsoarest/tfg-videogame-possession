@@ -95,8 +95,10 @@ func hit(body,dmg,knock):
 		$HurtSound.play()
 		knockback=true
 		if health<=0:
+			Globals.enemies_killed+=1
 			$HitBox/CollisionShape2D.set_deferred("disabled",true)
 			$AnimatedSprite.animation="Die"
+			$DieSound.play()
 			velocity.x=0
 		
 			
@@ -139,6 +141,7 @@ func _on_AttackCooldown_timeout():
 		elif player.global_position<global_position:
 			proj_instance.velocity=Vector2(-2,0)
 		get_parent().add_child(proj_instance)
+		$Shoot.play()
 
 
 func leave_pickups():

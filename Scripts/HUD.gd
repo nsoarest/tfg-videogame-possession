@@ -8,8 +8,7 @@ var shield_texture=preload("res://Assets/Shield.png")
 var holyshield_texture=preload("res://Assets/HolyShield.png")
 
 func _ready():
-	if get_parent().name!="Level1":
-		apply_upgrade1()
+	apply_upgrade1()
 
 
 func _process(delta):
@@ -24,9 +23,13 @@ func _on_Adam_player_dead():
 
 
 func _on_LoseButton_pressed():
+	if Globals.current_level!=1:
+		Globals.upgrade1_equipped=false
+		Globals.upgrade1=null
+	Globals.current_level=1
 	get_tree().change_scene("res://Src/Level1.tscn")
-
-
+	
+	
 func _on_LoseButton2_pressed():
 	get_tree().change_scene("res://Src/Menu.tscn")
 

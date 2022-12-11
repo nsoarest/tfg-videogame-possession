@@ -56,6 +56,11 @@ func _on_LoseButton_pressed():
 	Globals.hp_modifier=clamp(Globals.hp_modifier,Globals.min_hp_modifier,Globals.max_hp_modifier)
 	Globals.damage_modifier+=0.5
 	Globals.damage_modifier=clamp(Globals.damage_modifier,Globals.min_damage_modifier,Globals.max_damage_modifier)
+	Globals.current_level=1
+	if $LoseLabel.text!="You Have Escaped":
+		Globals.upgrade1=null
+		Globals.upgrade1_equipped=false
+		Globals.boss_hp=100
 	get_tree().change_scene("res://Src/Level1.tscn")
 
 
