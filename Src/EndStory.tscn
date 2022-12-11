@@ -1,0 +1,95 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/EndStory.gd" type="Script" id=1]
+[ext_resource path="res://Src/Button Theme.tres" type="Theme" id=2]
+[ext_resource path="res://Assets/font1.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 11
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 6
+font_data = ExtResource( 3 )
+
+[node name="EndStory" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0117647, 0.0235294, 0.0705882, 1 )
+
+[node name="Info" type="RichTextLabel" parent="."]
+margin_left = 9.0
+margin_top = -2.0
+margin_right = 313.0
+margin_bottom = 146.0
+rect_clip_content = false
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "
+[center] [tornado radius=3 freq=2]Adam manage to rid himself of the Demon Azazel that has been tormenting him for months. He was now free, and for the first time in a long time, when he closed his eyes, he was alone with his thoughts and dreams.[/tornado] [/center] "
+text = "
+ Adam manage to rid himself of the Demon Azazel that has been tormenting him for months. He was now free, and for the first time in a long time, when he closed his eyes, he was alone with his thoughts and dreams.  "
+scroll_active = false
+
+[node name="ContinueButton" type="Button" parent="."]
+margin_left = 126.0
+margin_top = 121.0
+margin_right = 192.0
+margin_bottom = 141.0
+theme = ExtResource( 2 )
+text = "Menu"
+
+[node name="StatsButton" type="Button" parent="."]
+margin_left = 126.0
+margin_top = 148.0
+margin_right = 192.0
+margin_bottom = 168.0
+theme = ExtResource( 2 )
+text = "Stats"
+
+[node name="Stats" type="Popup" parent="."]
+margin_left = 48.0
+margin_top = 20.0
+margin_right = 269.0
+margin_bottom = 130.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Stats"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.00392157, 0.00784314, 0.027451, 1 )
+
+[node name="Time" type="RichTextLabel" parent="Stats"]
+margin_left = 20.0
+margin_top = 49.0
+margin_right = 190.0
+margin_bottom = 67.0
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]Time Played: [/center]"
+text = "Time Played: "
+scroll_active = false
+
+[node name="Enemies" type="RichTextLabel" parent="Stats"]
+margin_left = 20.0
+margin_top = 25.0
+margin_right = 190.0
+margin_bottom = 43.0
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[center]Enemies Killed: [/center]"
+text = "Enemies Killed: "
+scroll_active = false
+
+[connection signal="pressed" from="ContinueButton" to="." method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="StatsButton" to="." method="_on_StatsButton_pressed"]

@@ -8,6 +8,7 @@ var claw_slash=preload("res://Src/ClawSlash.tscn")
 var hp_scene=preload("res://Src/HealthPickup.tscn")
 var rng=RandomNumberGenerator.new()
 var velocity=Vector2.ZERO
+var is_dead=false
 var current_state=0
 var knockback=false
 export var HP=100
@@ -24,14 +25,16 @@ func _ready():
 	invincible=true
 	velocity.x=speed
 	$AnimatedSprite.play("Fly")
+	HP=Globals.boss_hp
 	
 
 
 func _physics_process(delta):
 	state_check()
 	perform_state()	
-	if HP<=0:
-		queue_free()
+	if HP<=0 and !is_dead:
+		$DieSound.play()
+		is_dead=true
 
 
 
@@ -126,6 +129,7 @@ func _on_RangeAttack_timeout():
 	proj_inst.speed=3.5
 	proj_inst.get_node("Sprite").modulate=Color(1,0,0,1)
 	get_parent().add_child(proj_inst)
+	$Shoot.play()
 	
 
 func _on_SlashArea_body_entered(body):
@@ -161,3 +165,7 @@ func hit(body,dmg):
 func _on_KnockbackTimer_timeout():
 	knockback=false
 	$AnimatedSprite.material.set_shader_param("flash_modifier",0)
+
+
+func _on_DieSound_finished():
+	queue_free()

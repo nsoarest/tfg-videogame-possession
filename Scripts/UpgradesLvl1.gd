@@ -1,6 +1,5 @@
 extends Control
 
-var level3=false
 var rng=RandomNumberGenerator.new()
 var treasure_info="Be careful, you can get anything from this chest."
 var fireballs_info="Adam gains the ranged ability of throwing a demonic fireball but the corruption increases."
@@ -16,7 +15,6 @@ func _ready():
 	if Globals.upgrade1_equipped:
 		Globals.upgrade1=null
 		Globals.upgrade1_equipped=false
-		level3=true
 
 
 func _on_HolyWater_pressed():
@@ -61,8 +59,8 @@ func _on_Popup_popup_hide():
 	
 	
 func change_scene():
-		if !level3:
+		if Globals.current_level==2:
 			get_tree().change_scene("res://Src/Level2.tscn")	
-		else:
+		elif Globals.current_level==3:
 			get_tree().change_scene("res://Src/BossStory.tscn")
 	
