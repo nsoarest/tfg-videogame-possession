@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	Globals.boss_fights+=1
 	$Adam.boss_fight=true
 	$Adam/Camera2D.offset=Vector2(0,-55)
 	$HUD/BossHealth.visible=true

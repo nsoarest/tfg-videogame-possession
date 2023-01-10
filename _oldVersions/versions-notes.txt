@@ -1,5 +1,4 @@
 Versions: 
-
 0.1 - Initial version, main character and movement (no animation yet), basic platforms and basic fire-ball animation.
 0.2 - Added enemy that follws the player, movement animation and mele attack.
 0.3 - Added flying enemy and traps and corruption meter filling. (Antivirus deleted this .exe. It was a false positive, didn't save .zip, only .exe & .pck so it was lost)
@@ -21,3 +20,31 @@ Versions:
 	p4. Add mele attack sound to BOSS.
 	p5. Add number of times you fought the boss to End Screen STATS.
 	p6. Fix restart game when dying. It currently keeps power-ups from previous boss fight.
+1.1 - Minor Fixes & Changes: (Final Deliverable Version - PEC4) - Complete gameplay loop, all enemies, upgrades, pick-ups, attacks and main modifiers described in the main objectives are in working order.
+	- This is the final version of the game for the TFG Delivery.
+	- Any further fixes and/or implementation of secondary objectives (or new ones) could be added in a future version (2.0+) outside the scope of the TFG planning and delivery.
+
+--------------------------------------------
+
+Initial notes: (OUTDATED)
+-------Game
+-Made A Main Menu
+-Made A Test Level
+-Made HUD(HP bar, Aorruption Bar, Death Screen)
+
+--------Player
+-Implemented horizontal movement with acceleration
+-Implemented gravity and jump
+-Implemented a crouch mode
+-Player's death and possession mechanics
+-Player's Jump
+-Hitbox where the player can take hits from enemies
+
+
+Due to time constraints, the following objectives have been discarted and/or changed:
+- Discarted the objective of implementing a Pause Menu
+- Discarted the objective of implementing Collectibles & Lore fragments (except the brief intro and endgame texts)
+- Discarted the objective of implementing Challenges
+- Discarted the objective of implementing Unlockables
+
+Also, due to the unclear nature of licenses regarding images generated with Artificial Intelligence, the implementation of said resources were discarted. In stead I opted for simplifyng the overall aspect of the game, and rely on pixel-art created by me and using free assets and resources from OpenGameArt.org (https://opengameart.org/).

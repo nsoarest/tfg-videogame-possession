@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export var speed=150
-export var damage=50
+export var damage=25
 onready var player=get_parent().get_node("Adam")
 var projectile=preload("res://Src/EnemyProjectile.tscn")
 var claw_slash=preload("res://Src/ClawSlash.tscn")
@@ -79,6 +79,7 @@ func state_transition(state):
 			collision_mask=3
 			$RangeAttack.start()
 		elif current_state==states.melee_attack:
+			$Laugh.play()
 			$SlashArea/CollisionShape2D.set_deferred("disabled",false)
 			velocity=global_position.direction_to(player.global_position)*250
 			if player.global_position.x>global_position.x:
@@ -109,6 +110,7 @@ func _on_AttackTimer_timeout():
 	state_transition(random_state)
 
 
+
 func _on_AttackDuration_timeout():
 	$AttackTimer.wait_time=rng.randi_range(5,8)
 	$AttackTimer.start()
@@ -135,6 +137,7 @@ func _on_RangeAttack_timeout():
 func _on_SlashArea_body_entered(body):
 	if body.name=="Adam":
 		var claw_inst=claw_slash.instance()
+		claw_inst.name="AzazelClaw"
 		claw_inst.global_position=player.global_position
 		claw_inst.damage=damage*Globals.damage_modifier
 		claw_inst.flip_h=true if player.global_position.x>global_position.x else false
