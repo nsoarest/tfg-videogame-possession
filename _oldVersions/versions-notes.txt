@@ -21,6 +21,7 @@ Versions:
 	p5. Add number of times you fought the boss to End Screen STATS.
 	p6. Fix restart game when dying. It currently keeps power-ups from previous boss fight.
 1.1 - Minor Fixes & Changes: (Final Deliverable Version - PEC4) - Complete gameplay loop, all enemies, upgrades, pick-ups, attacks and main modifiers described in the main objectives are in working order.
+	- Some secondary objectives have been discarted due to time constraints.
 	- This is the final version of the game for the TFG Delivery.
 	- Any further fixes and/or implementation of secondary objectives (or new ones) could be added in a future version (2.0+) outside the scope of the TFG planning and delivery.
 
