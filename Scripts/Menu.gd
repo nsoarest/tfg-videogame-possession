@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	Globals.boss_fights=0
 	Globals.current_level=1
 	Globals.upgrade1_equipped=false
 	Globals.upgrade1=null

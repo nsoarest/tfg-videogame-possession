@@ -11,6 +11,7 @@ func _on_StatsButton_pressed():
 	var hours=OS.get_time().hour-Globals.time.hour
 	var mins=OS.get_time().minute-Globals.time.minute
 	var sec=OS.get_time().second-Globals.time.second
-	var time=str(hours)+"h "+str(mins)+"m "+str(sec)+"s"
+	var time=str(hours)+"h "+str(abs(mins))+"m "+str(abs(sec))+"s"
 	$Stats/Time.bbcode_text="[center]Time Played: "+time+"[/center]"
+	$Stats/BossFights.bbcode_text="[center]Boss Fights: "+str(Globals.boss_fights)+"[/center]"
 	$Stats.popup()

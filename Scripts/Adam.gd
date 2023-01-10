@@ -181,10 +181,10 @@ func hit(body,dmg,knock=null):
 		if shield==0:
 			$HurtSound.play()
 			$AnimatedSprite.material.set_shader_param("flash_modifier",1)
-			if body.name!="Azazel":
+			if body.name!="AzazelClaw":
 				HP-=dmg*Globals.hp_modifier
 			else:
-				HP-=dmg*0.5
+				HP-=dmg
 		elif shield>0:
 			shield-=1
 			if shield==0:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Assets/Adam.png" type="Texture" id=1]
 [ext_resource path="res://Src/Smoke.tscn" type="PackedScene" id=2]
@@ -201,6 +201,20 @@ outline_size = 1
 outline_color = Color( 0.690196, 0.152941, 0.152941, 1 )
 font_data = SubResource( 23 )
 
+[sub_resource type="ParticlesMaterial" id=25]
+lifetime_randomness = 0.01
+emission_shape = 2
+emission_box_extents = Vector3( 1, 1, 1 )
+flag_disable_z = true
+spread = 74.62
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 40.0
+initial_velocity_random = 0.16
+angular_velocity = 30.0
+orbit_velocity = -1.0
+orbit_velocity_random = 0.06
+color = Color( 0.215686, 0.215686, 0.215686, 0.607843 )
+
 [node name="MiniGame" type="Node2D"]
 script = ExtResource( 7 )
 
@@ -317,6 +331,27 @@ text = "Menu"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Smoke" parent="." instance=ExtResource( 2 )]
+modulate = Color( 1, 1, 1, 0.678431 )
+position = Vector2( -64, 113 )
+scale = Vector2( 4, 4 )
+emitting = true
+process_material = SubResource( 25 )
+
+[node name="Smoke2" parent="." instance=ExtResource( 2 )]
+modulate = Color( 1, 1, 1, 0.678431 )
+position = Vector2( 32, 113 )
+scale = Vector2( 4, 4 )
+emitting = true
+process_material = SubResource( 25 )
+
+[node name="Smoke3" parent="." instance=ExtResource( 2 )]
+modulate = Color( 1, 1, 1, 0.678431 )
+position = Vector2( 108, 113 )
+scale = Vector2( 4, 4 )
+emitting = true
+process_material = SubResource( 25 )
 
 [connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]
 [connection signal="timeout" from="SkullTimer" to="." method="_on_SkullTimer_timeout"]

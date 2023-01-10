@@ -23,10 +23,15 @@ func _on_Adam_player_dead():
 
 
 func _on_LoseButton_pressed():
-	if Globals.current_level!=1:
-		Globals.upgrade1_equipped=false
-		Globals.upgrade1=null
 	Globals.current_level=1
+	Globals.boss_fights=0
+	Globals.upgrade1_equipped=false
+	Globals.upgrade1=null
+	Globals.hp_modifier=Globals.min_hp_modifier
+	Globals.damage_modifier=Globals.min_damage_modifier
+	Globals.boss_hp=100
+	Globals.enemies_killed=0
+	Globals.time=OS.get_time()
 	get_tree().change_scene("res://Src/Level1.tscn")
 	
 	

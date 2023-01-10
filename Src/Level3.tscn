@@ -87,7 +87,7 @@ position = Vector2( 63, 32 )
 position = Vector2( 66, 119 )
 
 [node name="WinTimer" type="Timer" parent="."]
-wait_time = 180.0
+wait_time = 120.0
 autostart = true
 
 [connection signal="player_dead" from="Adam" to="." method="_on_Adam_player_dead"]
